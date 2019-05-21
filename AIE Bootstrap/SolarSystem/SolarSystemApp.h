@@ -24,12 +24,18 @@ protected:
 	aie::Font*			m_titleFont;
 
 	aie::Texture*		m_sunTexture;
+	aie::Texture*		m_mercuryTexture;
+	aie::Texture*		m_venusTexture;
 	aie::Texture*		m_earthTexture;
 	aie::Texture*		m_moonTexture;
-	aie::Texture*		m_redTexture;
+	aie::Texture*		m_marsTexture;
+	aie::Texture*		m_jupiterTexture;
 
-	Planet* m_star;
+	Planet* m_sun;
+	Planet* m_mercury;
+	Planet* m_venus;
 	Planet* m_earth;
 	Planet* m_moon;
-	Planet* m_red;
+	Planet* m_mars;
+	Planet* m_jupiter;
 };

@@ -11,7 +11,7 @@ int main() {
 	auto app = new SolarSystemApp();
 
 	// initialise and loop
-	app->run("AIE", 1280, 720, false);
+	app->run("The Solar System", 1280, 720, false);
 
 	// deallocation
 	delete app;

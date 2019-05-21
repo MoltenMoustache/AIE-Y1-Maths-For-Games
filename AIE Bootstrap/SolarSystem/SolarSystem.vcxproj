@@ -167,13 +167,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Planet.cpp" />
-    <ClCompile Include="Ship.cpp" />
     <ClCompile Include="SolarSystemApp.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Planet.h" />
-    <ClInclude Include="Ship.h" />
     <ClInclude Include="SolarSystemApp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
