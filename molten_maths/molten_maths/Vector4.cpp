@@ -1,5 +1,9 @@
 #include "Vector4.h"
 
+// static variables
+Vector4 Vector4::one = Vector4(1, 1, 1, 1);
+Vector4 Vector4::zero = Vector4(0, 0, 0, 0);
+
 float& Vector4::operator[] (const int a_index) {
 	assert((a_index >= 0) && (a_index < 4) && "Vector4 index out of range!");
 	return m_data[a_index];
@@ -128,6 +132,22 @@ Vector4 Vector4::Max(const Vector4& a_other) {
 // Returns a vector made of the smallest components of two vectors
 Vector4 Vector4::Min(const Vector4& a_other) {
 	return Vector4(minVal(x, a_other.x), minVal(y, a_other.y), minVal(z, a_other.z), minVal(w, a_other.w));
+}
+
+bool Vector4::Equals(const Vector4& a_other) {
+	if (x == a_other.x && y == a_other.y && z == a_other.z, w == a_other.w) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+void Vector4::Set(float a_newX, float a_newY, float a_newZ, float a_newW) {
+	x = a_newX;
+	y = a_newY;
+	z = a_newZ;
+	w = a_newW;
 }
 
 float Vector4::maxVal(float a_lhs, float a_rhs) {

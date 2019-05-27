@@ -1,10 +1,12 @@
 #include "Matrix3.h"
+#include <iostream>
 
 Matrix3::Matrix3(const float a_x1, const float a_x2, const float a_x3, const float a_y1, const float a_y2, const float a_y3, const float a_z1, const float a_z2, const float a_z3)
 	: xAxis(Vector3(a_x1, a_x2, a_x3)),
 	yAxis(Vector3(a_y1, a_y2, a_y3)),
-	zAxis(Vector3(a_z1, a_z2, a_z3)) 
-	//m_data1D{ a_x1, a_x2, a_x3 , a_y1, a_y2, a_y3, a_z1, a_z2, a_z3 }
+	zAxis(Vector3(a_z1, a_z2, a_z3))
+
+	// x = right, y = forward, z = position
 {}
 
 const Matrix3 Matrix3::identity() const {
@@ -170,10 +172,76 @@ void Matrix3::setRotateY(float a_rotation) {
 	m_data[2][2] = cos(a_rotation);
 }
 
-void Matrix3::setRotateZ(float a_rotation) {\
+void Matrix3::setRotateZ(float a_rotation) {
 
 	m_data[0][0] = cos(a_rotation);
 	m_data[1][0] = -sin(a_rotation);
 	m_data[0][1] = sin(a_rotation);
 	m_data[1][1] = cos(a_rotation);
+}
+
+Vector3 Matrix3::GetColumn(const int a_index) {
+
+	if (a_index <= 2 && a_index >= 0) {
+		return axis[a_index];
+	}
+	else {
+		std::cout << "Matrix3::GetColumn; index out of range!";
+		system("pause");
+	}
+}
+
+Vector3 Matrix3::GetRow(const int a_index) {
+
+	switch (a_index) {
+	case 0:
+		return Vector3(xAxis.x, yAxis.x, zAxis.x);
+		break;
+	case 1:
+		return Vector3(xAxis.y, yAxis.y, zAxis.y);
+		break;
+	case 2:
+		return Vector3(xAxis.z, yAxis.z, zAxis.z);
+		break;
+	default:
+		std::cout << "Matrix3::GetRow; index out of range!";
+		system("pause");
+	}
+}
+
+void Matrix3::SetColumn(const int a_index, const Vector3 a_column) {
+
+	switch (a_index) {
+	case 0:
+		xAxis = a_column;
+		break;
+	case 1:
+		yAxis = a_column;
+		break;
+	case 2:
+		zAxis = a_column;
+		break;
+	default:
+		std::cout << "Matrix3::SetColumn; index out of range!";
+		system("pause");
+		break;
+	}
+}
+
+void Matrix3::SetRow(const int a_index, const Vector3 a_row) {
+	switch (a_index) {
+	case 0:
+		xAxis.x = a_row.x, yAxis.x = a_row.y, zAxis.x = a_row.z;
+		break;
+	case 1:
+		xAxis.y = a_row.x, yAxis.y = a_row.y, zAxis.y = a_row.z;
+		break;
+	case 2:
+		xAxis.z = a_row.x, yAxis.z = a_row.y, zAxis.z = a_row.z;
+		break;
+	default:
+		std::cout << "Matrix3::SetRow; index out of range!";
+		system("pause");
+		break;
+	}
 }

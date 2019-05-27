@@ -6,6 +6,16 @@ class Vector3
 {
 public:
 	Vector3(const float a_x = 0.0f, const float a_y = 0.0f, const float a_z = 0.0f) :x(a_x), y(a_y), z(a_z) {};
+	static Vector3 forward;
+	static Vector3 back;
+	static Vector3 left;
+	static Vector3 right;
+
+	static Vector3 up;
+	static Vector3 down;
+
+	static Vector3 one;
+	static Vector3 zero;
 
 	// Vector Subscript Operator
 	float& operator[] (const int a_index);
@@ -96,6 +106,12 @@ public:
 	Vector3 Max(const Vector3& a_other);
 	// Returns a vector made of the smallest components of two vectors
 	Vector3 Min(const Vector3& a_other);
+
+	// Returns true if the given Vector is exactly the same as this Vector
+	bool Equals(const Vector3& a_other);
+
+	// Set x, y, z and w components of an existing Vector4
+	void Set(float a_newX, float a_newY, float a_newZ);
 
 private:
 	float maxVal(float a_lhs, float a_rhs);

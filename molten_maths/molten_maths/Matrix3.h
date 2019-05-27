@@ -59,4 +59,10 @@ public:
 	void setRotateX(float a_rotation);
 	void setRotateY(float a_rotation);
 	void setRotateZ(float a_rotation);
+
+	Vector3 GetColumn(const int a_index);
+	Vector3 GetRow(const int a_index);
+
+	void SetColumn(const int a_index, const Vector3 a_column);
+	void SetRow(const int a_index, const Vector3 a_row);
 };

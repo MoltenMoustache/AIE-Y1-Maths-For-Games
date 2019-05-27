@@ -8,6 +8,14 @@ public:
 	Vector2() : x(0.0f), y(0.0f) {};
 	Vector2(const float a_x, const float a_y) :x(a_x), y(a_y) {};
 
+	static Vector2 up;
+	static Vector2 down;
+	static Vector2 left;
+	static Vector2 right;
+
+	static Vector2 one;
+	static Vector2 zero;
+
 	// Vector Subscript Operator
 	float& operator[] (const int a_index);
 
@@ -84,6 +92,12 @@ public:
 	Vector2 Max(const Vector2& a_other);
 	// Returns a vector made of the smallest components of two vectors
 	Vector2 Min(const Vector2& a_other);
+
+	// Returns true if the given Vector is exactly the same as this Vector
+	bool Equals(const Vector2& a_other);
+
+	// Set x, y, z and w components of an existing Vector4
+	void Set(float a_newX, float a_newY);
 
 private:
 	float maxVal(float a_lhs, float a_rhs);

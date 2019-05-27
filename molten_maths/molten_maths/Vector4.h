@@ -7,6 +7,10 @@ class Vector4
 public:
 	Vector4(const float a_x = 0.0f, const float a_y = 0.0f, const float a_z = 0.0f, const float a_w = 1.0f) :x(a_x), y(a_y), z(a_z), w(a_w) {};
 
+	// static variables
+	static Vector4 one;
+	static Vector4 zero;
+
 	// Anonymous structs, all structs share the same memory address
 	union {
 		// X, Y, Z coordinates
@@ -92,6 +96,12 @@ public:
 	Vector4 Max(const Vector4& a_other);
 	// Returns a vector made of the smallest components of two vectors
 	Vector4 Min(const Vector4& a_other);
+
+	// Returns true if the given Vector is exactly the same as this Vector
+	bool Equals(const Vector4& a_other);
+
+	// Set x, y, z and w components of an existing Vector4
+	void Set(float a_newX, float a_newY, float a_newZ, float a_newW);
 
 private:
 

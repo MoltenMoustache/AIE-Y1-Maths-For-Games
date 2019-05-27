@@ -19,17 +19,25 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AABBCollider.h" />
+    <ClInclude Include="CircleCollider.h" />
+    <ClInclude Include="CollisionShape.h" />
     <ClInclude Include="Matrix2.h" />
     <ClInclude Include="Matrix3.h" />
     <ClInclude Include="Matrix4.h" />
+    <ClInclude Include="PlaneCollider.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />
     <ClInclude Include="Vector4.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AABBCollider.cpp" />
+    <ClCompile Include="CircleCollider.cpp" />
+    <ClCompile Include="CollisionShape.cpp" />
     <ClCompile Include="Matrix2.cpp" />
     <ClCompile Include="Matrix3.cpp" />
     <ClCompile Include="Matrix4.cpp" />
+    <ClCompile Include="PlaneCollider.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Vector3.cpp" />
     <ClCompile Include="Vector4.cpp" />

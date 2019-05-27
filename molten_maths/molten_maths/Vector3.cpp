@@ -1,5 +1,17 @@
 #include "Vector3.h"
 
+// static variables
+Vector3 Vector3::forward = Vector3(0, 0, 1);
+Vector3 Vector3::back = Vector3(0, 0, -1);
+Vector3 Vector3::left = Vector3(-1, 0, 0);
+Vector3 Vector3::right = Vector3(1, 0, 1);
+
+Vector3 Vector3::up = Vector3(0, 1, 0);
+Vector3 Vector3::down = Vector3(0, -1, 0);
+
+Vector3 Vector3::one = Vector3(1, 1, 1);
+Vector3 Vector3::zero = Vector3(0, 0, 0);
+
 // Vector Subscript Operator
 float& Vector3::operator[] (const int a_index) {
 	assert((a_index >= 0) && (a_index < 3) && "Vector3 index out of range!");
@@ -148,6 +160,21 @@ Vector3 Vector3::Min(const Vector3& a_other) {
 	return Vector3(minVal(x, a_other.x), minVal(y, a_other.y), minVal(z, a_other.z));
 }
 
+bool Vector3::Equals(const Vector3& a_other) {
+	if (x == a_other.x && y == a_other.y && z == a_other.z) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+void Vector3::Set(float a_newX, float a_newY, float a_newZ) {
+	x = a_newX;
+	y = a_newY;
+	z = a_newZ;
+}
+
 float Vector3::maxVal(float a_lhs, float a_rhs) {
 	if (a_lhs > a_rhs) {
 		return a_lhs;
@@ -170,3 +197,4 @@ Vector3 operator*(const float & a_lhs, const Vector3 & a_rhs)
 {
 	return a_rhs * a_lhs;
 }
+
